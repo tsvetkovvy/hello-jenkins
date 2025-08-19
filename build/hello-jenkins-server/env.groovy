@@ -1,7 +1,7 @@
 def envConfig = [
     // Настройки Git
     GIT_URL         : "git@github.com:tsvetkovvy/hello-jenkins.git",
-    GIT_BRANCH      : "devops"
+    GIT_BRANCH      : "main"
 
     // Версии tools
     JDK_VERSION     : "21.0.8"
