@@ -11,13 +11,11 @@ pipeline {
         jdk "${java_version}"
     }
     stages {
-        dir("build") {
-            stage('Load config') {
-                steps {
-                    script {
-                        sh "ls -lha && tree"
-                        cfg = load "${app_name}/env.groovy"
-                    }
+        stage('Load config') {
+            steps {
+                script {
+                    sh "ls -lha && tree"
+                    cfg = load "build/${app_name}/env.groovy"
                 }
             }
         }
