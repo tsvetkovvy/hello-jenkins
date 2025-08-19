@@ -4,8 +4,8 @@ def envConfig = [
     GIT_BRANCH      : "main"
 
     // Версии tools
-    JDK_VERSION     : "java-21-openjdk-amd64"
-    MAVEN_VERSION   : "maven-3.9.0"
+    // JDK_VERSION     : "java-21-openjdk-amd64"
+    // MAVEN_VERSION   : "maven-3.9.0"
 
 ]
 
