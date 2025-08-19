@@ -11,7 +11,7 @@ pipeline {
         jdk "${java_version}"
     }
     stages {
-        dir('build') {
+        dir("build") {
             stage('Load config') {
                 steps {
                     script {
