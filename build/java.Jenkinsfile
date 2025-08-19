@@ -1,7 +1,7 @@
 def app_name = "hello-jenkins-server"
 def cfg = ""
-def maven_version: "maven-3.9.0"
-def java_version: "java-21-openjdk-amd64"
+def maven_version = "maven-3.9.0"
+def java_version = "java-21-openjdk-amd64"
 
 
 pipeline {
