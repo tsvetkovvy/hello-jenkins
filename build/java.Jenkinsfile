@@ -1,5 +1,6 @@
 def app_name = "hello-jenkins-server"
-def cfg = load "${app_name}/env.groovy"
+def cfg = ""
+
 
 pipeline {
     agent any
@@ -8,6 +9,13 @@ pipeline {
         jdk "${cfg.JDK_VERSION}"
     }
     stages {
+        stage('Load config') {
+            steps {
+                script {
+                    cfg = load "${app_name}/env.groovy"
+                }
+            }
+        }
         stage('Checkout') {
             steps {
                 git branch: "${cfg.GIT_BRANCH}", url: "${cfg.GIT_URL}"
@@ -15,8 +23,10 @@ pipeline {
         }
         stage('Check Java and Maven versions') {
             steps {
-                sh 'java -version'
-                sh 'mvn --version'
+                script {
+                    sh 'java -version'
+                    sh 'mvn --version'
+                }
             }
         }
         stage('Build') {
