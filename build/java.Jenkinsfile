@@ -14,6 +14,7 @@ pipeline {
         stage('Load config') {
             steps {
                 script {
+                    sh "ls -lha && tree"
                     cfg = load "${app_name}/env.groovy"
                 }
             }
