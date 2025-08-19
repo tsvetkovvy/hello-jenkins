@@ -21,6 +21,7 @@ pipeline {
         }
         stage('Checkout') {
             steps {
+                git credentialsId: "ssh-key-github"
                 git branch: "${cfg.GIT_BRANCH}", url: "${cfg.GIT_URL}"
             }
         }
