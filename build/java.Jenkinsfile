@@ -21,8 +21,9 @@ pipeline {
         }
         stage('Checkout') {
             steps {
-                git credentialsId: "ssh-key-github"
-                git branch: "${cfg.GIT_BRANCH}", url: "${cfg.GIT_URL}"
+                git credentialsId: "ssh-key-github",
+                    branch: "${cfg.GIT_BRANCH}",
+                    url: "${cfg.GIT_URL}"
             }
         }
         stage('Check Java and Maven versions') {
