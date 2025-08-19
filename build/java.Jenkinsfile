@@ -1,12 +1,14 @@
 def app_name = "hello-jenkins-server"
 def cfg = ""
+def maven_version: "maven-3.9.0"
+def java_version: "java-21-openjdk-amd64"
 
 
 pipeline {
     agent any
     tools {
-        maven "${cfg.MAVEN_VERSION}"
-        jdk "${cfg.JDK_VERSION}"
+        maven "${maven_version}"
+        jdk "${java_version}"
     }
     stages {
         stage('Load config') {
