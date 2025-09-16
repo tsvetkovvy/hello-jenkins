@@ -33,7 +33,7 @@ pipeline {
         stage('Backup') {
             when {
                 expression {
-                    release_does_not_exist
+                    !release_does_not_exist
                 }
             }
             steps {
