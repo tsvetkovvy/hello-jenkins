@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     release_does_not_exist = sh script: """
-                        systemctl status blabla
+                        systemctl status dbus
                         """, returnStatus: true
                     echo "${release_does_not_exist}"
                     if(release_does_not_exist) {
