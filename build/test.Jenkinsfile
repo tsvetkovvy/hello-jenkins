@@ -33,7 +33,7 @@ pipeline {
         stage('Backup') {
             when {
                 expression {
-                    !release_does_not_exist
+                    return !release_does_not_exist
                 }
             }
             steps {
@@ -56,7 +56,7 @@ pipeline {
             when {
                 allOf {
                     expression { return params.DRY_RUN }
-                    expression { return release_does_not_exist }
+                    expression { return !release_does_not_exist }
                 }
             }
             steps {
