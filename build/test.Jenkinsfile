@@ -22,6 +22,7 @@ pipeline {
                     release_does_not_exist = sh script: """
                         systemctl status dbus
                         """, returnStatus: true
+                    echo "${release_does_not_exist}"
                     if(release_does_not_exist) {
                         echo "Release does not exists"
                     }
